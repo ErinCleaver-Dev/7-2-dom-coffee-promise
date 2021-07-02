@@ -22,3 +22,5 @@ function brewCoffeeClick() {
   console.log(coffeMaker);
   coffeMaker.brewCoffee();
 }
+
+window.test = test;
