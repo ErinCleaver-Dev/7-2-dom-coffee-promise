@@ -1,7 +1,9 @@
 console.log('hello!');
 
 class CoffeMachine {
-  constructor() {}
+  constructor(coffe = coffe) {
+    let coffe = coffe;
+  }
   // whater Heater()
   waterHeater() {}
   // GrindCoffe
@@ -10,7 +12,7 @@ class CoffeMachine {
     this.waterHeater();
     this.grindCoffe();
     setTimeout(() => {
-      console.log('Your Coffee is READY!');
+      console.log(`Your ${this.coffe} is READY!`);
     }, 6000);
   }
 }
