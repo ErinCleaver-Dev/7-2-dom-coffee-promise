@@ -8,7 +8,7 @@ class CoffeMachine {
   // whater Heater()
   waterHeater() {
     const heatWater = new Promise((response, reject) => {
-      setTimeout(()=> { response('Heating water')}, 1000)
+      setTimeout(()=> { response('Heating water')}, 3000)
     });
     heatWater.then((response) => {
       this.display(response)
@@ -27,14 +27,14 @@ class CoffeMachine {
     }, (reject) => {
       this.display("Failed to create coffe")
     })
+
   }
 
   display(msg) {
     this.process.innerHTML = msg;
   }
   brewCoffee() {
-    this.waterHeater();
-    this.grindCoffe();
+    Promise.all(this.waterHeater, this.grindCoffe)
     setTimeout(() => {
       this.display(`Your ${this.coffe} Coffe is READY!`)
     }, 6000);
