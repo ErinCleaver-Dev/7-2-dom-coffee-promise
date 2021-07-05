@@ -34,8 +34,8 @@ class CoffeMachine {
     this.process.innerHTML = msg;
   }
   brewCoffee() {
-     this.waterHeater
-     this.grindCoffe
+    this.waterHeater
+    this.grindCoffe
     setTimeout(() => {
       this.display(`Your ${this.coffe} Coffe is READY!`)
     }, 6000);
