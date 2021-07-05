@@ -12,7 +12,7 @@ class CoffeMachine {
     });
     heatWater.then((response) => {
       this.display(response)
-    }, (error) => {
+    }, (reject) => {
       this.display("Failed to create coffe")
     })
 
@@ -24,7 +24,7 @@ class CoffeMachine {
     });
     grindCoffee.then((response) => {
       this.display(response)
-    }, (error) => {
+    }, (reject) => {
       this.display("Failed to create coffe")
     })
   }
@@ -42,7 +42,7 @@ class CoffeMachine {
 }
 
 function brewCoffeeClick(coffe) {
-  
+
   const coffeMaker = new CoffeMachine(coffe.id);
   //console.log(coffeMaker);
   coffeMaker.brewCoffee();
