@@ -20,7 +20,7 @@ class CoffeMachine {
   // GrindCoffe
   grindCoffe() {
     const grindCoffee = new Promise((response, reject) => {
-      setTimeout(()=> { response('Grinding Coffe')}, 3000)
+      setTimeout(()=> { response('Grinding Coffe')}, 6000)
     });
     grindCoffee.then((response) => {
       this.display(response)
@@ -34,7 +34,8 @@ class CoffeMachine {
     this.process.innerHTML = msg;
   }
   brewCoffee() {
-    Promise.all(this.waterHeater, this.grindCoffe)
+     this.waterHeater
+     this.grindCoffe
     setTimeout(() => {
       this.display(`Your ${this.coffe} Coffe is READY!`)
     }, 6000);
