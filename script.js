@@ -11,9 +11,9 @@ class CoffeMachine {
       setTimeout(()=> { response('Heating water')}, 1000)
     });
     heatWater.then((response) => {
-      this.process.innerHTML = response
+      this.display(response)
     }, (error) => {
-      this.process.innerHTML ="Failed to create coffe";
+      this.display("Failed to create coffe")
     })
 
   }
@@ -23,16 +23,20 @@ class CoffeMachine {
       setTimeout(()=> { response('Grinding Coffe')}, 3000)
     });
     grindCoffee.then((response) => {
-      this.process.innerHTML = response
+      this.display(response)
     }, (error) => {
-      this.process.innerHTML ="Failed to create coffe"
+      this.display("Failed to create coffe")
     })
+  }
+
+  display(msg) {
+    this.process.innerHTML = msg;
   }
   brewCoffee() {
     this.waterHeater();
     this.grindCoffe();
     setTimeout(() => {
-      this.process.innerHTML =`Your ${this.coffe} Coffe is READY!`;
+      this.display(`Your ${this.coffe} Coffe is READY!`)
     }, 6000);
   }
 }
